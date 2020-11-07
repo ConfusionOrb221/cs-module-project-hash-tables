@@ -1,6 +1,19 @@
 def word_count(s):
     # Your code here
+    d = {}
+    s = s.lower()
+    s = s.split()
+    unwanted = """"':;,.-+=/\|[]{}()*^&"""
 
+    for words in s:
+        word = words.strip(unwanted)
+        if not word:
+            return d
+        if word not in d:
+            d[word] = 0
+        d[word] += 1
+    print(d)
+    return d
 
 
 if __name__ == "__main__":
